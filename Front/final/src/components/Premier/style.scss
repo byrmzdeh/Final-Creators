@@ -1,0 +1,399 @@
+.premier {
+    max-width: 100%;
+    min-height: 100vh;
+    background-color: white;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-around;
+
+    .car {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+
+        .girl {
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+
+            img {
+                width: 600px;
+            }
+        }
+
+        .right {
+            position: absolute;
+            left: 490px;
+            z-index: 2;
+            cursor: pointer;
+
+            img {
+                width: 300px;
+            }
+
+        }
+
+        .left {
+            position: absolute;
+            left: 50px;
+            cursor: pointer;
+
+            img {
+                width: 300px;
+            }
+        }
+    }
+
+    .the {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 50px;
+
+        .star-img {
+            animation: spin 3s linear infinite;
+
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+
+        h1 {
+            -webkit-text-stroke: 4px black;
+            letter-spacing: 2px;
+            font-size: 100px;
+            font-family: sans-serif;
+            font-weight: bolder;
+            color: transparent;
+
+        }
+
+        h2 {
+            padding-top: 20px;
+            font-size: 40px;
+            font-weight: 800;
+            font-family: sans-serif;
+            color: black;
+        }
+
+        p {
+            padding-top: 20px;
+            line-height: 32px;
+            font-size: 21px;
+            font-family: sans-serif;
+        }
+
+        .button {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+
+            .brand {
+                cursor: pointer;
+                width: 170px;
+                height: 55px;
+                border-radius: 5px;
+                background-color: #f1b84b;
+                font-weight: bold;
+                border: none;
+                transition: 0.4s;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                a {
+                    color: black;
+                    font-size: 20px;
+                }
+
+                i {
+                    opacity: 0;
+                }
+
+                &:hover {
+                    display: flex;
+                    align-items: center;
+                    width: 190px;
+
+                    i {
+                        font-size: 18px;
+                        padding-left: 8px;
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .creator {
+                cursor: pointer;
+                width: 180px;
+                height: 55px;
+                border-radius: 5px;
+                background-color: transparent;
+                border: 1px solid black;
+                font-weight: bold;
+                transition: 0.4s;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                a {
+                    color: black;
+                    font-size: 20px;
+                }
+
+                i {
+                    opacity: 0;
+                }
+
+                &:hover {
+                    display: flex;
+                    align-items: center;
+                    width: 200px;
+
+                    i {
+                        font-size: 18px;
+                        padding-left: 8px;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 300px) and (max-width:600px) {
+    .premier {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: auto;
+
+        .car {
+            display: none;
+        }
+
+
+        .the {
+            padding: 10px 100px 30px 60px;
+            overflow-y: hidden;
+
+
+            h1 {
+                font-size: 40px;
+            }
+
+            h2 {
+                font-size: 25px;
+            }
+
+            p {
+                font-size: 13px;
+            }
+
+            .button {
+
+                .brand {
+                    width: 160px;
+                    height: 55px;
+
+                    &:hover {
+                        width: 180px;
+                    }
+                }
+
+                .creator {
+                    width: 160px;
+                    height: 55px;
+
+                    &:hover {
+                        width: 180px;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+@media only screen and (min-width: 600px) and (max-width:900px) {
+    .premier {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: auto;
+
+        .car {
+            margin: 60px auto;
+            overflow-y: hidden;
+
+
+            .girl {
+                img {
+                    width: 450px;
+                }
+            }
+
+            .right {
+                left: 300px;
+                z-index: 2;
+
+                img {
+                    width: 200px;
+                }
+
+            }
+
+            .left {
+                left: 50px;
+
+                img {
+                    width: 200px;
+                }
+            }
+        }
+
+
+        .the {
+            padding: 10px 100px 30px 60px;
+            overflow-y: hidden;
+
+
+            h1 {
+                font-size: 60px;
+            }
+
+            h2 {
+                font-size: 30px;
+                ;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .button {
+                .brand {
+                    cursor: pointer;
+                    width: 160px;
+                    height: 55px;
+
+                    &:hover {
+                        display: flex;
+                        align-items: center;
+                        width: 180px;
+                    }
+                }
+
+                .creator {
+                    cursor: pointer;
+                    width: 160px;
+                    height: 55px;
+
+                    &:hover {
+                        display: flex;
+                        align-items: center;
+                        width: 180px;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+@media only screen and (min-width: 900px) and (max-width:1600px) {
+    .premier {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: auto auto;
+
+        .car {
+            margin: 60px auto;
+            overflow-y: hidden;
+
+
+            .girl {
+                img {
+                    width: 450px;
+                }
+            }
+
+            .right {
+                left: 300px;
+                z-index: 2;
+
+                img {
+                    width: 200px;
+                }
+
+            }
+
+            .left {
+                left: 50px;
+
+                img {
+                    width: 200px;
+                }
+            }
+        }
+
+
+        .the {
+            padding: 10px 100px 30px 60px;
+            overflow-y: hidden;
+
+
+            h1 {
+                font-size: 60px;
+            }
+
+            h2 {
+                font-size: 30px;
+                ;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .button {
+                .brand {
+                    cursor: pointer;
+                    width: 160px;
+                    height: 55px;
+
+                    &:hover {
+                        display: flex;
+                        align-items: center;
+                        width: 180px;
+                    }
+                }
+
+                .creator {
+                    cursor: pointer;
+                    width: 160px;
+                    height: 55px;
+
+                    &:hover {
+                        display: flex;
+                        align-items: center;
+                        width: 180px;
+                    }
+                }
+            }
+        }
+
+    }
+}

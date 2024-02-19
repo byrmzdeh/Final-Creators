@@ -1,0 +1,19 @@
+.brand{
+    background-color: #f1ff38;
+
+    .marquee {
+
+
+        color: black;
+        letter-spacing: 2px;
+        font-weight: 700;
+        font-size: 30px;
+        display: flex;
+        padding: 19px;
+
+        .texts {
+            background-color: #f1ff38;
+            display: flex;
+        }
+    }
+}

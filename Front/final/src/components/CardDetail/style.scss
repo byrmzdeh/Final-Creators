@@ -1,0 +1,97 @@
+.detail{
+    max-width: 87%;
+    min-height: 70vh;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-between;
+    .img2{
+        max-width: 700px;
+
+    }
+    .write{
+        max-width: 700px;
+        line-height: 50px;
+        p{
+            font-size: 20px;
+            flex-wrap: wrap;
+        }
+        img{
+            max-width: 400px;
+            cursor: pointer;
+        }
+    }
+
+}
+
+
+@media only screen and (min-width: 300px) and (max-width:600px) {
+    .detail {
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        .img2{
+            width: 80%;
+
+        }
+        .write{
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+    }
+}
+
+
+@media only screen and (min-width: 600px) and (max-width:1200px) {
+    .detail {
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .img2{
+            width: 80%;
+
+        }
+        .write{
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width:1600px) {
+    .detail {
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .img2{
+            width: 50%;
+
+        }
+        .write{
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+    }
+}

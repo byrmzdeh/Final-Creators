@@ -1,0 +1,195 @@
+.footer {
+    max-width: 100%;
+    width: 100%;
+    min-height: 77vh;
+    background-image:
+        linear-gradient(3506deg, rgba(28, 28, 28, 0.9), rgba(20, 20, 20, 0.99)),
+        url('https://shtheme.com/demosd/upcreatorswp/wp-content/themes/upcreators/assets/img/gradients/10.png');
+    color: white;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-evenly;
+
+
+    .footer-one {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin: 70px auto;
+
+        h2 {
+            font-size: 26px;
+        }
+
+        .star-img {
+            animation: spin 3s linear infinite;
+
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+
+
+        h1 {
+            font-size: 50px;
+            font-family: sans-serif;
+            font-weight: 900;
+            color: black;
+            -webkit-text-stroke: 2px rgb(243, 241, 241)
+        }
+
+        p {
+            font-size: 19px;
+            letter-spacing: 1px;
+            word-spacing: 2px;
+            flex-wrap: wrap;
+        }
+
+        .input-button {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 10px;
+
+            input {
+                width: 280px;
+                height: 55px;
+                padding: 10px;
+                font-size: 18px;
+                border: none;
+                outline: none;
+
+            }
+
+            button {
+                width: 210px;
+                height: 55px;
+                font-size: 17px;
+                cursor: pointer;
+                background-color: #f1b84b;
+                color: black;
+                border: none;
+                font-weight: bold;
+
+                &:hover {
+                    background-color: black;
+                    border: 1px solid white;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .footer-two {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin: 100px auto;
+
+        h2 {
+            font-size: 26px;
+            font-family: sans-serif;
+            font-weight: 900;
+        }
+
+        .icons {
+            display: flex;
+            gap: 25px;
+
+            i {
+                color: #f1b84b;
+                font-size: 25px;
+            }
+        }
+
+        p {
+            font-size: 20px;
+        }
+    }
+
+    .footer-three {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin: 100px auto;
+
+        h2 {
+            font-size: 26px;
+            font-family: sans-serif;
+            font-weight: 900;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    }
+
+    .footer-four {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin: 100px auto;
+
+        h2 {
+            font-size: 26px;
+            font-family: sans-serif;
+            font-weight: 900;
+        }
+
+        p {
+            font-size: 20px;
+
+            a {
+                color: white;
+            }
+        }
+    }
+
+
+
+}
+
+@media screen and (min-width: 300px) and (max-width:600px) {
+    .footer {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: auto;
+
+        .footer-one {
+            overflow-y: hidden;
+            p{
+                font-size: 15px;
+            }
+            .input-button {
+                display: grid;
+                grid-template-columns: auto;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width:1200px) {
+    .footer {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: auto auto;
+
+        .footer-one {
+            p{
+                font-size: 15px;
+            }
+            .input-button {
+                display: grid;
+                grid-template-columns: auto;
+            }
+
+        }
+    }
+}

@@ -1,0 +1,90 @@
+.collab {
+    max-width: 100%;
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    .brands {
+        width: 87%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 40px;
+
+        h1 {
+            color: white;
+            font-size: 120px;
+            font-family: sans-serif;
+            -webkit-text-stroke: 3px rgb(0, 0, 0);
+        }
+
+        h2 {
+            font-size: 43px;
+            font-weight: 900;
+            font-family: sans-serif;
+
+        }
+
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width:600px) {
+    .collab {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .brands{
+            width: 80%;
+            overflow: hidden;
+
+            h1{
+                font-size: 40px;
+            }
+            h2{
+                font-size: 20px;
+            }
+        }
+
+    }
+}
+
+
+@media only screen and (min-width: 600px) and (max-width:900px) {
+    .collab {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .brands{
+            overflow: hidden;
+            width: 80%;
+            h1{
+                font-size: 60px;
+            }
+            h2{
+                font-size: 40px;
+            }
+        }
+
+    }
+}
+
+
+@media only screen and (min-width: 900px) and (max-width:1500px) {
+    .collab {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .brands{
+            overflow: hidden;
+            width: 80%;
+        }
+
+    }
+}
