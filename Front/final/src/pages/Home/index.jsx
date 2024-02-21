@@ -8,6 +8,7 @@ import Media from '../../components/Media'
 import Cards from '../../components/Cards'
 import Collab from '../../components/Collab'
 import CompanySlider from '../../components/Company-Slider'
+import Cursor from '../../components/Cursor'
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <Cards/>
       <Collab/>
       <CompanySlider/>
+      <Cursor/>
     </div>
   )
 }

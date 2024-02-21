@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import './style.scss'
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 
 
 const Navbar = () => {
     const [sticky, setSticky] = useState(false)
+    let location = useLocation();
+
 
 
     function stickyNavbar() {
@@ -17,7 +19,14 @@ const Navbar = () => {
     }
     window.addEventListener("scroll", stickyNavbar);
     return (
-        <div className={`navbar ${sticky === true ? 'sticky' : ''}`}>
+        <div className={`navbar ${
+            sticky === true
+              ? "sticky"
+              : ""|| location.pathname === "/add"
+              ? "navbarBcgColor"
+              : "" || location.pathname === "/faq"
+              ? "navbarBcgColor"
+              : ""}`}>
             <div className="head">
                 <h1>salam</h1>
                 <button>login </button>
@@ -36,7 +45,7 @@ const Navbar = () => {
                     <li><NavLink to={'/our'}>Our Works</NavLink></li>
                     <li><NavLink to={'/faq'}>Faq </NavLink></li>
                     <li><NavLink to={'/shop'}>Shop </NavLink></li>
-                    <li><NavLink to={'/contact'}>Contact </NavLink></li>
+                    <li><NavLink to={'/add'}>Add </NavLink></li>
                 </ul>
                 <div className="icon">
                     <i class="fa-solid fa-magnifying-glass"></i>

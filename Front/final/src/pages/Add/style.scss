@@ -1,0 +1,64 @@
+.add{
+    width: 100%;
+    margin-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 60px;
+
+  
+    form{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 25px;
+        input{
+            width: 430px;
+            height: 40px;
+            outline: none;
+          
+            border: 1px solid rgb(122, 122, 122);
+        }
+        button{
+            width: 130px;
+            height: 30px;
+            color: black;
+            border: none;
+            background-color: rgb(199, 199, 199) ;
+        }
+
+    }
+
+    input{
+        width: 430px;
+        height: 40px;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid rgb(44, 90, 177);
+        outline: none;
+    }
+
+    .buttons{
+        display: flex;
+        gap: 10px;
+        button{
+            border: none;
+            background-color: rgb(122, 122, 122);
+            color: white;
+            padding: 10px;
+        }
+    }
+    table{
+        width: 80%;
+     
+        td{
+            text-align: center;
+            i{
+                cursor: pointer;
+                font-size: 25px;
+                color: rgb(221, 25, 25);
+            }
+        }
+    }
+}

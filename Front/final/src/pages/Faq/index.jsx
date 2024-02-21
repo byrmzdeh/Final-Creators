@@ -1,23 +1,65 @@
-import React, { useEffect, useState } from 'react'
-import './style.scss'
+import { useEffect, useState } from "react";
+import "./style.scss";
+import { NavLink } from "react-router-dom";
+function Faq({ showAll = false }) {
+  const [faqData, setFaqData] = useState([]);
+  const [show, setShow] = useState(null);
 
-const Faq = () => {
-  const [faq , setFaq] = useState([])
-  useEffect(()=>{
-    fetch('http://localhost:3000/faq')
-    .then((res)=>res.json())
-    .then((api)=>setFaq(api))
-  })
+  
+
+  useEffect(() => {
+    fetch("http://localhost:3000/faq")
+      .then((res) => res.json())
+      .then((data) => setFaqData(data));
+  }, []);
+
   return (
-    <div className='faq'>
-      {faq.map(item=>(
-        <div className="faqs">
-          <h1>{item.question}</h1>
-          <p>{item.answer}</p>
+    <section id="faqs">
+            <div className="faqs">
+    
+        <div className="faqs_content">
+          {faqData.map((x, index) => (
+            <div className="faq_card" key={x.key}>
+              <div
+                className=" question"
+                onClick={() => setShow(show === index ? null : index)}
+              >
+                <span
+                  style={
+                    show === index
+                      ? { backgroundColor: "#df1119", color: "white" }
+                      : {}
+                  }
+                >
+                  {index + 1}
+                </span>
+                <p style={{ color: `${show === index ? "#df1119" : ""}` }}>
+                  {x.question}
+                </p>
+                <i
+                  className={`fa-solid ${show === index ? " fa-chevron-down" : "fa-chevron-right"
+                    } `}
+                ></i>
+              </div>
+              {show === index && (
+                <p className="answer"> {x.answer} </p>
+              )}
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-  )
+        {/* <button className="faq_button">
+          <NavLink className={"active"} to={"/faq"}>
+            Daha Cox
+          </NavLink>
+        </button> */}
+        {/* <TitleButton text={"daha cox"}></TitleButton> */}
+      </div>
+
+    </section>
+   
+
+
+  );
 }
 
-export default Faq
+export default Faq;
