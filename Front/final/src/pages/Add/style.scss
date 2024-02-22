@@ -1,36 +1,38 @@
-.add{
+.add {
     width: 100%;
-    margin-top: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 60px;
+    margin: 220px auto;
 
-  
-    form{
+
+    form {
         display: flex;
         justify-content: center;
         flex-direction: column;
         gap: 25px;
-        input{
+
+        input {
             width: 430px;
             height: 40px;
             outline: none;
-          
+
             border: 1px solid rgb(122, 122, 122);
         }
-        button{
+
+        button {
             width: 130px;
             height: 30px;
             color: black;
             border: none;
-            background-color: rgb(199, 199, 199) ;
+            background-color: rgb(199, 199, 199);
         }
 
     }
 
-    input{
+    input {
         width: 430px;
         height: 40px;
         padding: 10px;
@@ -39,22 +41,25 @@
         outline: none;
     }
 
-    .buttons{
+    .buttons {
         display: flex;
         gap: 10px;
-        button{
+
+        button {
             border: none;
             background-color: rgb(122, 122, 122);
             color: white;
             padding: 10px;
         }
     }
-    table{
+
+    table {
         width: 80%;
-     
-        td{
+
+        td {
             text-align: center;
-            i{
+
+            i {
                 cursor: pointer;
                 font-size: 25px;
                 color: rgb(221, 25, 25);

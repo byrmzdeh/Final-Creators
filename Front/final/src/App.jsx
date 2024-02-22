@@ -6,6 +6,8 @@ import Faq from './pages/Faq';
 import CardsDetail from './pages/CardsDetail';
 import Shop from './pages/Shop';
 import Add from './pages/Add';
+import Wishlist from './pages/Wishlist';
+import Basket from './pages/Basket';
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
           <Route path='/:detail' element={< CardsDetail/>}></Route>
           <Route path='/faq' element={<Faq />}></Route>
           <Route path='/shop' element={<Shop />}></Route>
+          <Route path='/basket' element={<Basket />}></Route>
+          <Route path='/wishlist' element={<Wishlist />}></Route>
           <Route path='/add' element={<Add />}></Route>
         </Route>
       </Routes>

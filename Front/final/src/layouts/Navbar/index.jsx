@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './style.scss'
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 
 
@@ -19,14 +19,16 @@ const Navbar = () => {
     }
     window.addEventListener("scroll", stickyNavbar);
     return (
-        <div className={`navbar ${
+        <div className={`navbar
+         ${
             sticky === true
               ? "sticky"
               : ""|| location.pathname === "/add"
               ? "navbarBcgColor"
               : "" || location.pathname === "/faq"
               ? "navbarBcgColor"
-              : ""}`}>
+              : ""}
+              `}>
             <div className="head">
                 <h1>salam</h1>
                 <button>login </button>
@@ -49,8 +51,8 @@ const Navbar = () => {
                 </ul>
                 <div className="icon">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <i class="fa-regular fa-heart"></i>
-                    <i class="fa-solid fa-basket-shopping"></i>
+                    <Link to={'/wishlist'}><i class="fa-regular fa-heart"></i></Link>
+                    <Link to={'/basket'}><i class="fa-solid fa-basket-shopping"></i></Link>
                 </div>
             </div>
         </div>

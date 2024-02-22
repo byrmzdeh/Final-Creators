@@ -1,0 +1,157 @@
+#faqs {
+    max-width: 100%;
+    min-height: 120vh;
+    margin: 250px auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-around;
+    background-image:
+        linear-gradient(306deg, rgba(203, 203, 203, 0.99), rgba(253, 252, 252, 0.6)),
+        url('https://shtheme.com/demosd/upcreatorswp/wp-content/uploads/2023/05/10.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .all {
+        margin: 50px auto;
+
+        h1 {
+            color: transparent;
+            font-size: 120px;
+            font-family: sans-serif;
+            -webkit-text-stroke: 3px rgb(0, 0, 0);
+        }
+
+        h2 {
+            font-size: 45px;
+            letter-spacing: 2px;
+            font-weight: bolder;
+            font-family: serif;
+            color: black;
+
+        }
+        .star-img {
+            animation: star 3s linear infinite;
+
+            @keyframes star {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+
+            }
+        }
+
+    }
+
+    .faqs {
+        margin: 120px auto;
+        max-width: 700px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+
+        .faqs_head {
+            display: flex;
+            width: 100%;
+            min-height: 80px;
+            font-weight: 900;
+            font-size: 25px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .faqs_content {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+
+            .faq_card {
+                max-width: 700px;
+                width: 90%;
+                min-height: 60px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+                transition: all 0.5s ease-in-out;
+                cursor: pointer;
+
+                i {
+                    color: black;
+                }
+
+                .question {
+                    width: 100%;
+                    height: 80px;
+                    background-color: #fffafa;
+                    box-shadow: rgba(215, 215, 215, 0.9) 0px 7px 29px 0px;
+                    display: flex;
+                    gap: 20px;
+                    align-items: center;
+                    padding: 15px;
+                    transition: all 0.6s ease-in-out;
+
+                    span {
+                        width: 70px;
+                        height: 70px;
+                        background-color: #f2f3f6;
+                        line-height: 57px;
+                        font-size: 22px;
+                        font-weight: 900;
+                        color: #a6a6a6;
+                        text-align: center;
+                    }
+
+                    p {
+                        width: 90%;
+                        font-size: 21px;
+                        color: black;
+                        font-weight: 600;
+                    }
+                }
+
+                .answer {
+                    width: 100%;
+                    height: auto;
+                    // border-radius: 20px;
+                    display: flex;
+                    align-items: center;
+                    padding: 20px 20px;
+                    font-size: 21px;
+                    font-weight: 300;
+                    line-height: 30px;
+                    border: 3px solid white;
+                    transition: all 0.6s ease-out;
+                    color: white;
+
+                }
+            }
+        }
+
+        .faq_button {
+            border-radius: 10px;
+            min-width: 150px;
+            height: 50px;
+            background-color: transparent;
+            color: white;
+            font-size: 14px;
+            border: 1px solid #4a8cff8e;
+            transition: 400ms;
+            font-weight: 500;
+
+            &:hover {
+                color: yellow;
+            }
+        }
+
+        // .active {
+        //   display: none;
+        // }
+    }
+}

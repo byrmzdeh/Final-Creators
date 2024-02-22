@@ -40,6 +40,15 @@ const Add = () => {
     }
 
 
+    function handleDelete(id) {
+        fetch("http://localhost:3000/cards/" + id, { method: "DELETE" })
+            .then((res) => res.json())
+            .then((api) => {
+                getAll()
+            })
+    }
+
+
 
     return (
         <div className='add'>
@@ -82,21 +91,25 @@ const Add = () => {
                 <tr>
                     <th>Image</th>
                     <th>Name</th>
-                    <th>Description</th>
                     <th>Price</th>
+                    <th>Discount</th>
                     <th>Delete</th>
                 </tr>
 
                 {data
                     .map(item => (
                         <tr>
-                            <td><img width={80} src={item.image} alt="" />
-                            <video width={100} src={item.image} autoplay controls></video>
-</td>
+                            <td>
+                                {item.image.toLowerCase().endsWith('.mp4') ? (
+                                    <video width={270} height={130}  src={item.image}></video>
+                                ) : (
+                                    <img width={200}  src={item.image} alt="" />
+                                )}
+                            </td>
                             <td>{item.name}</td>
-                            <td>{item.desc}</td>
                             <td>$ {item.price}</td>
-                            <td><i className="fa-solid fa-trash-can" ></i></td>
+                            <td>$ {item.discount}</td>
+                            <td><i className="fa-solid fa-trash-can" onClick={()=> handleDelete(item._id)} ></i></td>
                         </tr>
                     ))}
             </table>

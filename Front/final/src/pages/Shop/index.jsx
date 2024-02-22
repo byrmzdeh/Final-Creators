@@ -1,11 +1,15 @@
 import React from 'react'
 import ShopCards from '../../components/ShopCards'
+import Cursor from '../../components/Cursor'
+import NewShop from '../../components/ShopNew'
 
 const Shop = () => {
   return (
     <div>
-        <ShopCards/>
-      
+      <NewShop/>
+      <ShopCards />
+      <Cursor/>
+
     </div>
   )
 }

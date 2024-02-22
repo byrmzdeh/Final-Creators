@@ -47,12 +47,12 @@ function Cursor() {
       
         {`
                 #cursor {
-                    background-color: ${isClicking ? "#c7a97f" : "#c7a97f"};
+                    background-color: ${isClicking ? "#f1b84b" : "#f1b84b"};
                 }
                 #cursor-border {
                     width: ${isClicking ? "55px" : "45px"};
                     height: ${isClicking ? "55px" : "45px"};
-                    border: 2px solid ${buttonHovered ? "#c7a97f" : "#c7a97f"};
+                    border: 2px solid ${buttonHovered ? "black" : "black"};
 
                 }
                 `}

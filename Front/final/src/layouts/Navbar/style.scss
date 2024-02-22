@@ -21,8 +21,13 @@
         align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid black;
-        button{
+
+        button {
             padding: 10px;
+        }
+
+        h1 {
+            color: white;
         }
     }
 
@@ -48,7 +53,7 @@
                 a {
                     font-size: 19px;
                     color: black;
-                    font-family:  serif;
+                    font-family: serif;
                     font-weight: bold;
 
                 }
@@ -70,59 +75,93 @@
             gap: 13px;
             color: black;
             cursor: pointer;
+
+            i {
+                color: black;
+            }
         }
     }
 }
 
 .sticky {
     position: fixed;
-    background-color: rgb(192, 192, 192);
+    background-color: white;
     min-height: 12vh;
     border-bottom: 1px solid #aa8453;
 
-.nav{
-    ul {
-        display: flex;
-        gap: 30px;
+    .nav {
+        ul {
+            display: flex;
+            gap: 30px;
 
-        li {
-            a {
-                font-size: 18px;
-                color: rgba(0, 0, 0, 0.229) !important;
-                font-family: 'Barlow Condensed', sans-serif;
+            li {
+                a {
+                    font-size: 18px;
+                    color: black !important;
+                    font-family: 'Barlow Condensed', sans-serif;
 
-            }
+                }
 
-            .active {
-                color: #aa8453 !important;
-            }
+                .active {
+                    color: #3f3e3c !important;
+                }
 
-            i {
-                font-size: 10px;
+                i {
+                    font-size: 10px;
+                }
+
             }
 
         }
 
     }
-    .icon {
-        display: flex;
-        gap: 13px;
-        color: black !important;
-        cursor: pointer;
-    }
-}
 
     .head {
         display: none;
+
+        h1 {
+            color: white;
+        }
+
+        ul {
+            li {
+                a {
+                    color: black;
+                }
+            }
+        }
+
+        .icon {
+            i {
+                color: black;
+            }
+        }
     }
 }
 
-.navbar.navbarBcgColor {
-    background-color: #367687;
-    position: static;
-    border-bottom: 1px solid #cdc5b9;
-  }
-  
+// .navbar.navbarBcgColor {
+//     background-color: rgb(209, 209, 209);
+//     position: static;
+//     border-bottom: 1px solid #cdc5b9;
+
+//     .nav {
+//         ul {
+//             li {
+//                 a {
+//                     color: black;
+//                 }
+//             }
+//         }
+//     }
+//     .head{
+//         .icon{
+//             i{
+//                 color: black  !important;
+//             }
+//         }
+//     }
+// }
+
 
 
 @media only screen and (min-width: 300px) and (max-width:600px) {

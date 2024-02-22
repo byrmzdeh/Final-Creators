@@ -34,14 +34,14 @@ export const getByPostCard = async function (req, res, next) {
     }
 }
 
-export const getByPutcard = async (req, res) => {
+export const getByPutCard = async (req, res) => {
     try {
         const { id } = req.params
-        const { name, price , discount } = req.body
-        const card = await cardModel.findByIdAndUpdate(id, { name, image: "http://localhost:3000/image/" , price , discount })
+        const { name, price, discount } = req.body
+        const card = await cardModel.findByIdAndUpdate(id, { name, image: "http://localhost:3000/image/" + req.uploadFileName, price, discount });
         res.send(card)
     } catch (error) {
-        res.send(error.message)
+        res.send(error.message);
     }
 }
 
