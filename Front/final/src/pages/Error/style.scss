@@ -10,6 +10,7 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
     gap: 20px;
+    margin-top: 200px;
 
     .star-img {
         animation: star 3s linear infinite;
@@ -28,8 +29,9 @@
 
     p {
         
-        font-size: 70px;
+        font-size: 80px;
         color: white;
         font-weight: bolder;
     }
+
 }

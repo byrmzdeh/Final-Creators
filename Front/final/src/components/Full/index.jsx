@@ -43,7 +43,7 @@ const Full = () => {
               </p>
 
             </div>
-            <i className="fa-solid fa-play" onClick={() => handleVideoToggle()}>
+            {/* <i className="fa-solid fa-play" onClick={() => handleVideoToggle()}>
 
               {iframe ? (
                 <div className="video">
@@ -61,7 +61,7 @@ const Full = () => {
                   }}>X</button>
                 </div>
               ) : null}
-            </i>
+            </i> */}
           </div>
 
           <img src="https://shtheme.com/demosd/upcreatorswp/wp-content/uploads/2023/05/herodoggo.png" alt="" />

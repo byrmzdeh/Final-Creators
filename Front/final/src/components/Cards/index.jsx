@@ -20,7 +20,7 @@ const Cards = () => {
                         <div className="write">
                             <h2 >{item.name}</h2>
                             {/* <p>{item.title}</p> */}
-                            <Link to={`/${item._id}`}><button>Read More <i class="fa-solid fa-arrow-right"></i></button></Link>
+                            <Link to={'/card/'+item._id}><button>Read More <i class="fa-solid fa-arrow-right"></i></button></Link>
                         </div>
                     </div>
                     <div  className="opacity">

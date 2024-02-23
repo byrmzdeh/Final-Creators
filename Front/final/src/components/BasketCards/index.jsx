@@ -22,7 +22,6 @@ const BasketCards = () => {
                         <td>
                             {item.image && (
                                 <>
-                                    <img src={item.image} alt="" />
                                     {item.image.toLowerCase().endsWith('.mp4') ? (
                                         <video width={100} height={130} src={item.image}></video>
                                     ) : (
