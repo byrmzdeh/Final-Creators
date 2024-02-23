@@ -8,7 +8,7 @@ const CardDetail = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:3000/smm')
+        fetch('http://localhost:3600/smm')
             .then((res) => res.json())
             .then((api) => {
                 const itemDetail = api.find((x) => x._id === detail)

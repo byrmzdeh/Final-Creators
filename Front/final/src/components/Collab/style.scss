@@ -1,4 +1,4 @@
-.collab {
+.collabb {
     max-width: 100%;
     min-height: 30vh;
     display: flex;
@@ -6,7 +6,7 @@
     justify-content: center;
 
 
-    .brands {
+    .brandss {
         width: 87%;
         display: flex;
         flex-direction: column;
@@ -30,13 +30,13 @@
 }
 
 @media only screen and (min-width: 300px) and (max-width:600px) {
-    .collab {
+    .collabb {
         width: 100%;
         height: auto;
         display: flex;
         align-items: center;
         justify-content: center;
-        .brands{
+        .brandss{
             width: 80%;
             overflow: hidden;
 
@@ -53,13 +53,13 @@
 
 
 @media only screen and (min-width: 600px) and (max-width:900px) {
-    .collab {
+    .collabb {
         width: 100%;
         height: auto;
         display: flex;
         align-items: center;
         justify-content: center;
-        .brands{
+        .brandss{
             overflow: hidden;
             width: 80%;
             h1{
@@ -75,13 +75,13 @@
 
 
 @media only screen and (min-width: 900px) and (max-width:1500px) {
-    .collab {
+    .collabb {
         width: 100%;
         height: auto;
         display: flex;
         align-items: center;
         justify-content: center;
-        .brands{
+        .brandss{
             overflow: hidden;
             width: 80%;
         }

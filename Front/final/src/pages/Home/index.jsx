@@ -6,9 +6,9 @@ import Join from '../../components/Join'
 import Brand from '../../components/Brand'
 import Media from '../../components/Media'
 import Cards from '../../components/Cards'
-import Collab from '../../components/Collab'
 import CompanySlider from '../../components/Company-Slider'
 import Cursor from '../../components/Cursor'
+import Collab from '../../components/Collab'
 
 const Home = () => {
   return (

@@ -7,7 +7,7 @@ const Cards = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:3000/smm')
+        fetch('http://localhost:3600/smm')
             .then((res) => res.json())
             .then((api) => setData(api))
     }, [])

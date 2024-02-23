@@ -59,6 +59,12 @@
         td {
             text-align: center;
 
+            img{
+                object-fit: cover;
+            }
+            video{
+                object-fit: cover;
+            }
             i {
                 cursor: pointer;
                 font-size: 25px;

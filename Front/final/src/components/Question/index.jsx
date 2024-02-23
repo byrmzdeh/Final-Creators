@@ -11,7 +11,7 @@ const Question = ({ showAll = false }) => {
 
 
     useEffect(() => {
-        fetch("http://localhost:3000/faq")
+        fetch("http://localhost:3600/faq")
             .then((res) => res.json())
             .then((data) => setFaqData(data));
     }, []);

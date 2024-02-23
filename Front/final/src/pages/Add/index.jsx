@@ -24,7 +24,7 @@ const Add = () => {
         formData.append('price', price)
         formData.append('discount', discount)
 
-        fetch('http://localhost:3000/cards', {
+        fetch('http://localhost:3600/cards', {
             method: 'post',
             body: formData
         });
@@ -34,14 +34,14 @@ const Add = () => {
 
 
     function getAll() {
-        fetch('http://localhost:3000/cards')
+        fetch('http://localhost:3600/cards')
             .then((res) => res.json())
             .then((api) => setData(api))
     }
 
 
     function handleDelete(id) {
-        fetch("http://localhost:3000/cards/" + id, { method: "DELETE" })
+        fetch("http://localhost:3600/cards/" + id, { method: "DELETE" })
             .then((res) => res.json())
             .then((api) => {
                 getAll()
@@ -93,6 +93,7 @@ const Add = () => {
                     <th>Name</th>
                     <th>Price</th>
                     <th>Discount</th>
+                    <th>Update</th>
                     <th>Delete</th>
                 </tr>
 
@@ -101,14 +102,15 @@ const Add = () => {
                         <tr>
                             <td>
                                 {item.image.toLowerCase().endsWith('.mp4') ? (
-                                    <video width={270} height={130}  src={item.image}></video>
+                                    <video width={200} height={230}  src={item.image}></video>
                                 ) : (
-                                    <img width={200}  src={item.image} alt="" />
+                                    <img width={200} height={230} src={item.image} alt="" />
                                 )}
                             </td>
                             <td>{item.name}</td>
                             <td>$ {item.price}</td>
                             <td>$ {item.discount}</td>
+                            <td></td>
                             <td><i className="fa-solid fa-trash-can" onClick={()=> handleDelete(item._id)} ></i></td>
                         </tr>
                     ))}

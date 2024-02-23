@@ -7,10 +7,11 @@ const ShopCards = () => {
   const {addWishlist , checkWishlist} = useContext(WishlistContext)
 
   useEffect(() => {
-    fetch('http://localhost:3000/cards')
+    fetch('http://localhost:3600/cards')
       .then((res) => res.json())
       .then((api) => setShop(api))
   }, [])
+
 
 
 
@@ -30,8 +31,7 @@ const ShopCards = () => {
           </div>
           <div className="button">
             <button>Add to Cart</button>
-            <div className="heart"><i className={` ${checkWishlist(item) ? "fa-solid fa-heart" : " fa-regular fa-heart"}`}  onClick={()=>addWishlist(item)}></i>
-</div>
+            <div className="heart"><i className={` ${checkWishlist(item) ? "fa-solid fa-heart" : " fa-regular fa-heart"}`}  onClick={()=>addWishlist(item)}></i></div>
           </div>
 
         </div>
