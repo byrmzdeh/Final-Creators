@@ -1,0 +1,50 @@
+.checkout {
+    max-width: 100%;
+    min-height: 130vh;
+    background-color: bisque;
+    color: rgb(208, 208, 208);
+    margin: 200px auto;
+
+    .row {
+        form {
+            input {
+                background-color: #0f0e0f;
+                border: 1px solid gray;
+                color: white;
+            }
+
+            label {
+                color: white;
+                border: 1px solid gray;
+            }
+
+
+            select {
+                background-color: #0f0e0f;
+                color: rgb(208, 208, 208);
+            }
+
+            .order {
+
+                background-color: #0f0e0f;
+
+                .total {
+                    a {
+                        color: #b88939;
+                    }
+                }
+
+                .place {
+                    background-color: #c19f5f;
+                    color: white;
+                    border: none;
+
+                    &:hover {
+                        background-color: #b88939;
+                    }
+
+                }
+            }
+        }
+    }
+}

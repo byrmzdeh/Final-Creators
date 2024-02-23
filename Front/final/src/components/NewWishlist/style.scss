@@ -1,0 +1,113 @@
+.newWishlist {
+    max-width: 100%;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://shtheme.com/demosd/upcreatorswp/wp-content/uploads/2023/04/Img4.jpg');
+    margin-top: 200px;
+    background-size: 93% 80%;
+    object-fit: cover;
+
+
+    .Wishlistnew {
+        width: 87%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 40px;
+
+        h1 {
+            color: rgba(181, 181, 181, 0.25);
+            font-size: 120px;
+            font-family: sans-serif;
+            -webkit-text-stroke: 3px white;
+        }
+
+        h2 {
+            font-size: 47px;
+            letter-spacing: 2px;
+            line-height: 70px;
+            font-weight: bolder;
+            font-family:  sans;
+            color: white;
+            font-weight: bolder;
+
+        }
+
+        .star-img {
+            animation: star 3s linear infinite;
+
+            @keyframes star {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+
+            }
+        }
+
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width:600px) {
+    .newWishlist {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .Wishlistnew{
+            width: 80%;
+            overflow: hidden;
+
+            h1{
+                font-size: 40px;
+            }
+            h2{
+                font-size: 20px;
+            }
+        }
+
+    }
+}
+
+
+@media only screen and (min-width: 600px) and (max-width:900px) {
+    .newWishlist {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .Wishlistnew{
+            overflow: hidden;
+            width: 80%;
+            h1{
+                font-size: 60px;
+            }
+            h2{
+                font-size: 40px;
+            }
+        }
+
+    }
+}
+
+
+@media only screen and (min-width: 900px) and (max-width:1500px) {
+    .newWishlist {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .Wishlist{
+            overflow: hidden;
+            width: 80%;
+        }
+
+    }
+}

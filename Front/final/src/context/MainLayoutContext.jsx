@@ -1,14 +1,17 @@
 import React from 'react'
 import BasketProvider from './BasketContex'
 import WishlistProvider from './WishlistContext'
+import { UserContext } from './UserContext'
 
-const MainLayoutContext = ({children}) => {
+const MainLayoutContext = ({ children }) => {
   return (
-    <BasketProvider>
+    // <UserContext>
+      <BasketProvider>
         <WishlistProvider>
-            {children}
+          {children}
         </WishlistProvider>
-    </BasketProvider>
+      </BasketProvider>
+    // </UserContext>
   )
 }
 

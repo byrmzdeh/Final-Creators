@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './style.scss'
 
-const Add = () => {
+const AdminPanel = () => {
     const [data, setData] = useState([])
 
     const [image, setImage] = useState('')
@@ -9,6 +9,12 @@ const Add = () => {
     const [price, setPrice] = useState('')
     const [discount, setDiscount] = useState('')
     const myFileInput = useRef()
+
+    const [input, setInput] = useState('')
+    const [sortBy, setSortBy] = useState(null)
+    
+
+    
 
     useEffect(() => {
         getAll()
@@ -48,12 +54,20 @@ const Add = () => {
             })
     }
 
+    function lower(data) {
+        if (typeof data === 'string') {
+            return data.toLowerCase()
+        }
+        return data
+    }
+
+
 
 
     return (
         <div className='add'>
             <div className="nav"></div>
-            <h1>ADD PAGES</h1>
+            <h1>ADMIN PANEL</h1>
 
             <form onSubmit={mysubmit}>
                 <input style={{ display: "none" }}
@@ -64,7 +78,7 @@ const Add = () => {
 
                 <div onClick={() => { myFileInput.current.click() }}>
                     <i className='fa-solid fa-upload'></i>
-                    <span>Add Image</span>
+                    <span>AdminPanel Image</span>
                 </div>
                 <br />
                 <input
@@ -86,6 +100,16 @@ const Add = () => {
                 <button>Send</button>
             </form>
 
+            <input type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder='Search Products...' />
+            <div className="buttons">
+                <button onClick={() => setSortBy({ preporty: 'name', asc: true })}>A-Z</button>
+                <button onClick={() => setSortBy({ preporty: 'name', asc: false })}>Z-A</button>
+                <button onClick={() => setSortBy({ preporty: 'price', asc: true })}>INCREASE</button>
+                <button onClick={() => setSortBy({ preporty: 'price', asc: false })}>DECREASE</button>
+                <button onClick={() => setSortBy(null)}>DEFAULT</button>
+            </div>
+
+
 
             <table border={1}>
                 <tr>
@@ -93,11 +117,20 @@ const Add = () => {
                     <th>Name</th>
                     <th>Price</th>
                     <th>Discount</th>
-                    <th>Update</th>
                     <th>Delete</th>
                 </tr>
 
                 {data
+                 .filter(item => item.name.toLowerCase().includes(input.toLowerCase()))
+                 .sort((a, b) => {
+                     if (!sortBy) {
+                         return 0
+                     } else if (sortBy.asc) {
+                         return (lower(a[sortBy.preporty]) > lower(b[sortBy.preporty])) ? 1 : ((lower(b[sortBy.preporty]) > lower(a[sortBy.preporty])) ? -1 : 0)
+                     } else if (sortBy.asc === false) {
+                         return (lower(a[sortBy.preporty]) < lower(b[sortBy.preporty])) ? 1 : ((lower(b[sortBy.preporty]) < lower(a[sortBy.preporty])) ? -1 : 0)
+                     }
+                 })
                     .map(item => (
                         <tr>
                             <td>
@@ -110,7 +143,6 @@ const Add = () => {
                             <td>{item.name}</td>
                             <td>$ {item.price}</td>
                             <td>$ {item.discount}</td>
-                            <td></td>
                             <td><i className="fa-solid fa-trash-can" onClick={()=> handleDelete(item._id)} ></i></td>
                         </tr>
                     ))}
@@ -123,4 +155,4 @@ const Add = () => {
     )
 }
 
-export default Add
+export default AdminPanel

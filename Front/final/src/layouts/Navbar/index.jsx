@@ -20,19 +20,18 @@ const Navbar = () => {
     window.addEventListener("scroll", stickyNavbar);
     return (
         <div className={`navbar
-         ${
-            sticky === true
-              ? "sticky"
-              : ""|| location.pathname === "/add"
-              ? "navbarBcgColor"
-              : "" || location.pathname === "/faq"
-              ? "navbarBcgColor"
-              : ""}
+         ${sticky === true
+                ? "sticky"
+                : "" || location.pathname === "/add"
+                    ? "navbarBcgColor"
+                    : "" || location.pathname === "/faq"
+                        ? "navbarBcgColor"
+                        : ""}
               `}>
             <div className="head">
                 <h1>salam</h1>
-                <button>login </button>
-                <button>register </button>
+                <li><NavLink to='/login'>Login </NavLink></li>
+                <li><NavLink to='/register'>Register </NavLink></li>
             </div>
             <div className="nav">
                 <div className="img">
@@ -40,22 +39,31 @@ const Navbar = () => {
                     <h2>Creators</h2>
                 </div>
                 <ul>
-                    <li><NavLink to='/'>Home </NavLink></li>
-                    <li><NavLink to='/about'>About Us</NavLink></li>
-                    <li><NavLink to={'/pages'}>Pages </NavLink></li>
-                    <li><NavLink to={'/events'}>Events</NavLink></li>
-                    <li><NavLink to={'/our'}>Our Works</NavLink></li>
-                    <li><NavLink to={'/faq'}>Faq </NavLink></li>
-                    <li><NavLink to={'/shop'}>Shop </NavLink></li>
-                    <li><NavLink to={'/add'}>Add </NavLink></li>
+                    <li><NavLink to={"/"}>  Home </NavLink></li>
+                    <li className='pages'><NavLink to={""}>  Pages </NavLink>
+                        <ul id='submenu'>
+                            <li><NavLink to={"/faq"}>  Faq </NavLink></li>
+                            <li><NavLink to={"*"}>  Error Page </NavLink></li>
+                        </ul>
+                    </li>
+
+
+                    <li><NavLink to={"/shop"}>  Shop </NavLink></li>
+                    <li><NavLink to={"/contact"}>  Contact </NavLink></li>
+                    <li><NavLink to={"/add"}>  Add </NavLink></li>
+
+
+
+
+
+
                 </ul>
                 <div className="icon">
-                    <i class="fa-solid fa-magnifying-glass"></i>
                     <Link to={'/wishlist'}><i class="fa-regular fa-heart"></i></Link>
                     <Link to={'/basket'}><i class="fa-solid fa-basket-shopping"></i></Link>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

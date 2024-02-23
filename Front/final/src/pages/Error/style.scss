@@ -1,0 +1,35 @@
+.error {
+    max-width: 100%;
+    min-height: 90vh;
+    background-image: url('https://shtheme.com/demosd/upcreatorswp/wp-content/themes/upcreators/assets/svg/logo--white.svg');
+    background-color: rgb(226, 20, 20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    gap: 20px;
+
+    .star-img {
+        animation: star 3s linear infinite;
+
+        @keyframes star {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+
+        }
+    }
+
+    p {
+        
+        font-size: 70px;
+        color: white;
+        font-weight: bolder;
+    }
+}

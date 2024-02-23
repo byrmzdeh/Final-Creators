@@ -1,0 +1,126 @@
+.contact {
+    max-width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-around;
+    background-image:
+        linear-gradient(306deg, rgba(159, 157, 157, 0.99), rgba(212, 212, 212, 0.6)),
+        url('https://shtheme.com/demosd/upcreatorswp/wp-content/uploads/2023/05/10.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    gap: 30px;
+    margin-top: 200px ;
+
+    .star-img {
+        animation: star 3s linear infinite;
+
+        @keyframes star {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+
+        }
+    }
+
+    h1 {
+        color: transparent;
+        font-size: 110px;
+        font-family: sans-serif;
+        -webkit-text-stroke: 3px rgb(0, 0, 0);
+    }
+
+    h2 {
+        font-size: 50px;
+        font-weight: bolder;
+    }
+
+    .girls {
+        max-width: 800px;
+    }
+
+    .follow {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 30px;
+        margin-top: 60px;
+
+        .us {
+            display: grid;
+            gap: 10px;
+
+            .icon {
+                display: flex;
+                gap: 10px;
+
+            }
+
+            h3 {
+                font-size: 25px;
+            }
+
+            p {
+                color: rgb(52, 52, 52);
+                font-size: 22px;
+            }
+        }
+
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width:600px) {
+    .contact {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-content: center;
+        margin: 10px auto;
+
+        h1{
+            font-size: 50px;
+        }
+        h2{
+            font-size: 30px;
+        }
+
+        .girls {
+            width: 100%;
+        }
+
+
+
+    }
+}
+
+
+@media only screen and (min-width: 600px) and (max-width:1200px) {
+    .contact {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-content: center;
+        margin: 10px auto;
+
+        .girls {
+            width: 100%;
+        }
+
+        h1{
+            font-size: 70px;
+        }
+
+        h2{
+            font-size: 40px;
+        }
+
+    }
+}
