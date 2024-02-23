@@ -113,9 +113,7 @@ function Login() {
                     </div>
                   </div>
                   <button type="submit">Log In</button>
-                  <Link to="/resetPassword">
-                    <p>Lost your password?</p>
-                  </Link>
+
                 </Form>
               </Formik>
               <div className="haveAccount">

@@ -13,6 +13,7 @@ import AdminPanel from './pages/Add';
 import Checkout from './pages/Checkout';
 import Contact from './pages/Contact';
 import Error  from './pages/Error';
+import SignUp from './pages/SignUp';
 
 const App = () => {
   return (
@@ -28,6 +29,8 @@ const App = () => {
           <Route path='/add' element={<AdminPanel />}></Route>
           <Route path='/checkout' element={<Checkout />}></Route>
           <Route path='/contact' element={<Contact />}></Route>
+          <Route path='/signup' element={<SignUp />}></Route>
+
 
         </Route>
         <Route path='*' element={<Error />}></Route>
