@@ -1,133 +1,60 @@
-import { Formik, Field, Form, ErrorMessage } from "formik";
-import * as Yup from "yup";
-import React, { useContext, useState } from "react";
-import Cursor from "../../components/Cursor";
-import { Link, Navigate } from "react-router-dom";
-import { UserContext } from "../../context/UserContext";
+import React, { useState } from 'react'
+import { useContext } from 'react'
+import { UserContext } from '../../context/UserContext'
+import { useNavigate } from 'react-router-dom'
+import './style.scss'
 
+const Login = () => {
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('')
+  const { addToken } = useContext(UserContext)
+  const navigate = useNavigate()
 
-
-function Login() {
-  const [showPassword, setShowPassword] = useState(false);
-  const { addToken, decode } = useContext(UserContext);
-
-  function handleSubmit(values) {
-    const { email, password } = values;
-    fetch("http://localhost:3600/login", {
+  function handleSubmit(e) {
+    e.preventDefault()
+    fetch('http://localhost:3600/login', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: JSON.stringify({
-        email: email,
+        username: username,
         password: password,
-      }),
+        email: email
+      })
     })
       .then((res) => res.json())
-      .then((data) => {
-        addToken(data);
-      });
+      .then((data) =>
+        addToken(data))
+    navigate('/')
+
   }
 
-  return (
-    <>
-      <div className="account">
-        <p>
-          <Link to={"/"}>
-            <i className="fa-solid fa-house"></i>
-          </Link>
-          My Account
-        </p>
-      </div>
-      <div className="Login">
-        <div className="login">
-          {decode ? (
-            <>
-              <Navigate to={"/account"}></Navigate>
-            </>
-          ) : (
-            <div className="loginContent">
-              <h2>Login</h2>
-              <Formik
-                initialValues={{ password: "", email: "" }}
-                validationSchema={Yup.object({
-                  password: Yup.string()
-                    .min(8, "Must be 8 characters at least")
-                    .required("Required"),
-                  email: Yup.string()
-                    .email("Invalid email address")
-                    .required("Required"),
-                })}
-                onSubmit={(values, { setSubmitting }) => {
-                  handleSubmit(values);
-                  setSubmitting(false);
-                }}
-              >
-                <Form className="form">
-                  <div className="input">
-                    <label htmlFor="email" className="label">
-                      Email address <span>*</span>
-                    </label>
-                    <Field
-                      name="email"
-                      type="email"
-                      id="email"
-                      className="field"
-                    />
-                    <ErrorMessage name="email" component={"span"} />
-                  </div>
-                  <div className="input2">
-                    <label htmlFor="password" className="label">
-                      Password <span>*</span>
-                    </label>
-                    <div className="fields">
-                      <Field
-                        className="field"
-                        name="password"
-                        id="password"
-                        type={showPassword ? "text" : "password"}
-                      />
-                      {showPassword ? (
-                        <i
-                          className="fa-sharp fa-light fa-eye"
-                          onClick={() => setShowPassword(false)}
-                        ></i>
-                      ) : (
-                        <i
-                          className="fa-sharp fa-light fa-eye-slash"
-                          onClick={() => setShowPassword(true)}
-                        ></i>
-                      )}
-                    </div>
-                    <ErrorMessage name="password" component={"span"} />
-                  </div>
-                  <div className="loginText">
-                    <div className="checkbox">
-                      <div className="checkbox-input">
-                        <Field type="checkbox" name="toggle" id="toggle" />
-                        <label htmlFor="toggle" className="label">
-                          Remember me
-                        </label>
-                      </div>
-                      <ErrorMessage name="toggle" component={"span2"} />
-                    </div>
-                  </div>
-                  <button type="submit">Log In</button>
 
-                </Form>
-              </Formik>
-              <div className="haveAccount">
-                <p>
-                  Don't have account? <Link to={"/signUp"}> Sign Up</Link>
-                </p>
-              </div>
-            </div>
-          )}
-        </div>
+
+  return (
+    <div className='login'>
+      <div className="form">
+        <img width={200} src="https://www.iconarchive.com/download/i60750/double-j-design/origami-colored-pencil/yellow-user.ico" alt="" />
+        <h1>WELCOME</h1>
+        <form onSubmit={handleSubmit}>
+          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder='Username' />
+          <br />
+          <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Password' />
+          <br />
+          <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email' />
+          <br />
+          <button>LOGIN</button>
+          <a href="/register">or Sign Up</a>
+
+        </form>
       </div>
-      <Cursor />
-    </>
-  );
+      <img className='cat' src="https://shtheme.com/demosd/upcreatorswp/wp-content/uploads/2023/05/herodoggo.png" alt="" />
+
+    </div>
+  )
 }
 
-export default Login;
+export default Login

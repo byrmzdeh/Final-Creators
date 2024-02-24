@@ -1,7 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import './style.scss'
+import { Helmet } from 'react-helmet'
+import { UserContext } from '../../context/UserContext'
 
-const AdminPanel = () => {
+const CardsPanel = () => {
     const [data, setData] = useState([])
 
     const [image, setImage] = useState('')
@@ -12,9 +14,10 @@ const AdminPanel = () => {
 
     const [input, setInput] = useState('')
     const [sortBy, setSortBy] = useState(null)
-    
+    const {token} = useContext(UserContext)
 
-    
+
+
 
     useEffect(() => {
         getAll()
@@ -66,8 +69,13 @@ const AdminPanel = () => {
 
     return (
         <div className='add'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Admin Panel</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <div className="nav"></div>
-            <h1>ADMIN PANEL</h1>
+            <h1> ADMIN PANEL</h1>
 
             <form onSubmit={mysubmit}>
                 <input style={{ display: "none" }}
@@ -121,21 +129,21 @@ const AdminPanel = () => {
                 </tr>
 
                 {data
-                 .filter(item => item.name.toLowerCase().includes(input.toLowerCase()))
-                 .sort((a, b) => {
-                     if (!sortBy) {
-                         return 0
-                     } else if (sortBy.asc) {
-                         return (lower(a[sortBy.preporty]) > lower(b[sortBy.preporty])) ? 1 : ((lower(b[sortBy.preporty]) > lower(a[sortBy.preporty])) ? -1 : 0)
-                     } else if (sortBy.asc === false) {
-                         return (lower(a[sortBy.preporty]) < lower(b[sortBy.preporty])) ? 1 : ((lower(b[sortBy.preporty]) < lower(a[sortBy.preporty])) ? -1 : 0)
-                     }
-                 })
+                    .filter(item => item.name.toLowerCase().includes(input.toLowerCase()))
+                    .sort((a, b) => {
+                        if (!sortBy) {
+                            return 0
+                        } else if (sortBy.asc) {
+                            return (lower(a[sortBy.preporty]) > lower(b[sortBy.preporty])) ? 1 : ((lower(b[sortBy.preporty]) > lower(a[sortBy.preporty])) ? -1 : 0)
+                        } else if (sortBy.asc === false) {
+                            return (lower(a[sortBy.preporty]) < lower(b[sortBy.preporty])) ? 1 : ((lower(b[sortBy.preporty]) < lower(a[sortBy.preporty])) ? -1 : 0)
+                        }
+                    })
                     .map(item => (
                         <tr>
                             <td>
                                 {item.image.toLowerCase().endsWith('.mp4') ? (
-                                    <video width={200} height={230}  src={item.image}></video>
+                                    <video width={200} height={230} src={item.image}></video>
                                 ) : (
                                     <img width={200} height={230} src={item.image} alt="" />
                                 )}
@@ -143,7 +151,7 @@ const AdminPanel = () => {
                             <td>{item.name}</td>
                             <td>$ {item.price}</td>
                             <td>$ {item.discount}</td>
-                            <td><i className="fa-solid fa-trash-can" onClick={()=> handleDelete(item._id)} ></i></td>
+                            <td><i className="fa-solid fa-trash-can" onClick={() => handleDelete(item._id)} ></i></td>
                         </tr>
                     ))}
             </table>
@@ -155,4 +163,4 @@ const AdminPanel = () => {
     )
 }
 
-export default AdminPanel
+export default CardsPanel

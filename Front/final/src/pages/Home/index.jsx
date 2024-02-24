@@ -9,20 +9,26 @@ import Cards from '../../components/Cards'
 import CompanySlider from '../../components/Company-Slider'
 import Cursor from '../../components/Cursor'
 import Collab from '../../components/Collab'
+import { Helmet } from 'react-helmet'
 
 const Home = () => {
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Home</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <Full />
-      <Premier/>
-      <Thinks/>
-      <Join/>
-      <Brand/>
-      <Media/>
-      <Cards/>
-      <Collab/>
-      <CompanySlider/>
-      <Cursor/>
+      <Premier />
+      <Thinks />
+      <Join />
+      <Brand />
+      <Media />
+      <Cards />
+      <Collab />
+      <CompanySlider />
+      <Cursor />
     </div>
   )
 }

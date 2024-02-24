@@ -9,11 +9,13 @@ import Wishlist from './pages/Wishlist';
 import Basket from './pages/Basket';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import AdminPanel from './pages/Add';
 import Checkout from './pages/Checkout';
 import Contact from './pages/Contact';
-import Error  from './pages/Error';
-import SignUp from './pages/SignUp';
+import Error from './pages/Error';
+import AdminPanel from './pages/AdminPanel';
+import CardsPanel from './components/CardsPanel';
+import UserPanel from './components/UserPanel';
+import PrivateRoute from './pages/Routes';
 
 const App = () => {
   return (
@@ -21,17 +23,19 @@ const App = () => {
       <Routes>
         <Route element={<Mainlayout />}>
           <Route path='/' element={<Home />}></Route>
-          <Route path='/card/:id' element={< CardsDetail/>}></Route>
+          <Route path='/card/:id' element={< CardsDetail />}></Route>
           <Route path='/faq' element={<Faq />}></Route>
           <Route path='/shop' element={<Shop />}></Route>
           <Route path='/basket' element={<Basket />}></Route>
           <Route path='/wishlist' element={<Wishlist />}></Route>
-          <Route path='/add' element={<AdminPanel />}></Route>
-          <Route path='/checkout' element={<Checkout />}></Route>
           <Route path='/contact' element={<Contact />}></Route>
-          <Route path='/signup' element={<SignUp />}></Route>
+          <Route path='/checkout' element={<Checkout />}></Route>
 
-
+          <Route element={<PrivateRoute roles={['admin']} />}>
+            <Route path='/add' element={<AdminPanel />}></Route>
+            <Route path='/cardsPanel' element={<CardsPanel />}></Route>
+            <Route path='/usersPanel' element={<UserPanel />}></Route>
+          </Route>
         </Route>
         <Route path='*' element={<Error />}></Route>
 

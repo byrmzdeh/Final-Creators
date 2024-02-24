@@ -5,7 +5,12 @@
     justify-content: center;
     flex-direction: column;
     gap: 60px;
-    margin: 220px auto;
+    margin-top: 220px;
+    background-image:
+        linear-gradient(306deg, rgba(159, 157, 157, 0.99), rgba(212, 212, 212, 0.6)),
+        url('https://shtheme.com/demosd/upcreatorswp/wp-content/uploads/2023/05/10.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 
 
     form {
@@ -23,11 +28,11 @@
         }
 
         button {
-            width: 130px;
-            height: 30px;
+            width: 140px;
+            height: 35px;
             color: black;
             border: none;
-            background-color: rgb(199, 199, 199);
+            background-color: white;
         }
 
     }
@@ -41,30 +46,35 @@
         outline: none;
     }
 
+
+
     .buttons {
         display: flex;
-        gap: 10px;
+        gap: 7px;
 
         button {
             border: none;
-            background-color: rgb(122, 122, 122);
-            color: white;
+            background-color: white;
+            color: black;
             padding: 10px;
         }
     }
 
     table {
         width: 80%;
+        margin: 130px auto;
 
         td {
             text-align: center;
 
-            img{
+            img {
                 object-fit: cover;
             }
-            video{
+
+            video {
                 object-fit: cover;
             }
+
             i {
                 cursor: pointer;
                 font-size: 25px;

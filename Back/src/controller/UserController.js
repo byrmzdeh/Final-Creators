@@ -12,6 +12,7 @@ export const getAllUsers = async (req, res) => {
 export const getUser =  async (req, res) => {
     try {
         const { id } = req.params
+        const decoded = req.decoded
         const user = await UserModel.findById(id);
         if (decoded.username !== user.username && decoded.role==="user") {
             return res.send("you don't have access")

@@ -1,0 +1,103 @@
+.register{
+    max-width: 100%;
+    min-height: 100vh;
+    background-color: rgb(225, 184, 32);
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-around;
+    .form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        h1{
+            color: white;
+            font-size: 30px;
+            font-style: italic;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            input{
+                width: 500px;
+                height: 40px;
+                padding: 20px;
+                background-color: transparent;
+                color: white;
+                outline: none;
+                border: none;
+                border-bottom: 3px solid red;
+                font-size: 20px;
+                font-style: italic;
+
+
+                &::placeholder{
+                    color: white;
+                    font-size: 20px;
+                    font-style: italic;
+                }
+            }
+            button{
+                background-color: rgba(184, 16, 16, 0.8);
+                border: 1px solid rgb(246, 194, 8);
+                color: white;
+                width: 500px;
+                height: 60px;
+                margin: 10px auto;
+                border-radius: 20px;
+                font-size: 25px;
+                font-style: italic;
+            }
+            
+        }
+    }
+    .cat{
+        width: 600px;
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width:600px) {
+    .register {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: auto;
+        .form{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            form{
+                
+                input{
+                    width: 280px;
+                    height: 30px;
+                }
+                button{
+                    width: 280px;
+                    height: 30px;
+                }
+            }
+            
+        }
+        .cat{
+            width: 270px;
+        }
+        
+
+    }
+}
+
+
+@media only screen and (min-width: 600px) and (max-width:1200px) {
+    .register {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: auto;
+        
+
+    }
+}

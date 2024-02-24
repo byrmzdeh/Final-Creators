@@ -1,45 +1,29 @@
-import React, { createContext, useEffect } from "react";
+import { createContext, useState } from "react";
 import { jwtDecode } from "jwt-decode";
-import Cookies from "js-cookie";
-import UseLocal from "../hook/UseLocal";
 
-export const UserContext = createContext();
+export const UserContext = createContext()
 
 function UserProvider({ children }) {
+    const [token, setToken] = useState(null)
+    const [decode, setDecode] = useState(null)
 
-  const [token, setToken] = UseLocal(Cookies.get("token") ? Cookies.get("token") : null );
-  const [decode, setDecode] = UseLocal(null);
-
-  useEffect(() => {
-    if (token) {
-    const tokenDecoded = jwtDecode(token);
-    console.log(tokenDecoded);
-    setDecode(tokenDecoded);
+    function addToken(token) {
+        setToken(token)
+        const token_decoded = jwtDecode(token);
+        console.log(token);
+        console.log(token_decoded);
+        setDecode(token_decoded)
     }
 
-  }, [token])
-  
+    function logOut() {
+        setDecode(null)
+        setToken(null)
+    }
+    return (
+        <UserContext.Provider value={{token, decode , addToken, logOut}}>
+            {children}
+        </UserContext.Provider>
+    )
 
-  function addToken(token) {
-    setToken(token);
-    Cookies.set('token', token , { expires: 7 })
-    console.log(token);
-  }
-
-  function logOut() {
-    setToken(null);
-    Cookies.remove('token')
-    setDecode(null);
-    window.location.href = "/login"
-  }
-
-  const data = {
-    token,
-    decode,
-    addToken,
-    logOut,
-  };
-  return <UserContext.Provider value={data}>{children}</UserContext.Provider>;
 }
-
-export default UserProvider;
+export default UserProvider

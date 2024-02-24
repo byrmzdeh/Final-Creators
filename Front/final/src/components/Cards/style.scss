@@ -120,16 +120,13 @@
 
 @media only screen and (min-width: 300px) and (max-width:600px) {
     .cards {
-        width: 100%;
-        height: auto;
-        display: grid;
-        grid-template-columns: auto;
+        display: none;
 
     }
 }
 
 
-@media only screen and (min-width: 600px) and (max-width:900px) {
+@media only screen and (min-width: 600px) and (max-width:1200px) {
     .cards {
         width: 100%;
         height: auto;
@@ -140,15 +137,6 @@
 }
 
 
-@media only screen and (min-width: 900px) and (max-width:1200px) {
-    .cards {
-        width: 100%;
-        height: auto;
-        display: grid;
-        grid-template-columns: auto ;
-
-    }
-}
 
 @media only screen and (min-width: 1200px) and (max-width:1800px) {
     .cards {

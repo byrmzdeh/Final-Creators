@@ -2,6 +2,7 @@ import { Router } from "express"
 import multer from "multer"
 import { getAllCard, getByDeleteCard, getByIdCard, getByPostCard, getByPutCard,  } from "../controller/CardController.js"
 import { storage } from "../middleware/upload.js"
+import { authMiddleware } from "../middleware/authMiddleware.js"
 
 
 const upload = multer({ storage: storage })

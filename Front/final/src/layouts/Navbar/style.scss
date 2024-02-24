@@ -9,78 +9,12 @@
     background-color: transparent;
     z-index: 4;
     display: flex;
-    flex-direction: column;
     align-items: center;
 
 
 
-    .head {
-        width: 90%;
-        height: 8vh;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid black;
 
-        button {
-            padding: 10px;
-        }
 
-        h1 {
-            color: white;
-        }
-    }
-
-    // .nav {
-    //     width: 90%;
-    //     height: 10vh;
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: space-between;
-
-    //     .img {
-    //         display: flex;
-    //         align-items: center;
-    //         justify-content: center;
-    //         gap: 15px;
-    //     }
-
-    //     ul {
-    //         display: flex;
-    //         gap: 30px;
-
-    //         li {
-    //             a {
-    //                 font-size: 19px;
-    //                 color: black;
-    //                 font-family: serif;
-    //                 font-weight: bold;
-
-    //             }
-
-    //             .active {
-    //                 color: orange;
-    //             }
-
-    //             i {
-    //                 font-size: 10px;
-    //             }
-
-    //         }
-
-    //     }
-
-    //     .icon {
-    //         display: flex;
-    //         gap: 13px;
-    //         color: black;
-    //         cursor: pointer;
-
-    //         i {
-    //             color: black;
-    //         }
-    //     }
-    // }
 
     .nav {
         width: 90%;
@@ -118,7 +52,7 @@
 
 
                 &:hover {
-                   
+
 
                     #submenu {
                         background-color: white;
@@ -187,8 +121,9 @@
 
                 }
             }
-            .pages{
-                a{
+
+            .pages {
+                a {
                     color: black;
                 }
             }
@@ -205,6 +140,42 @@
             text-decoration: none;
             transition: all 0.25s ease;
         }
+
+        .head {
+            display: flex;
+            gap: 10px;
+            font-weight: bolder;
+
+            li {
+                a {
+                    color: black;
+                    font-size: 20px;
+                    font-weight: bolder;
+                }
+            }
+        }
+
+        .loginnn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            .profile {
+                i {
+                    font-size: 25px;
+                    color: rgb(4, 4, 104);
+                }
+            }
+
+            p {
+                color: red;
+                text-decoration: underline;
+                font-size: 20px;
+            }
+        }
+
 
 
 
@@ -334,6 +305,10 @@
 
 
     }
+
+    .resNavbar {
+        display: none;
+    }
 }
 
 .sticky {
@@ -442,42 +417,126 @@
     }
 }
 
-// .navbar.navbarBcgColor {
-//     background-color: rgb(209, 209, 209);
-//     position: static;
-//     border-bottom: 1px solid #cdc5b9;
-
-//     .nav {
-//         ul {
-//             li {
-//                 a {
-//                     color: black;
-//                 }
-//             }
-//         }
-//     }
-//     .head{
-//         .icon{
-//             i{
-//                 color: black  !important;
-//             }
-//         }
-//     }
-// }
 
 
 
-@media only screen and (min-width: 300px) and (max-width:600px) {
+
+@media only screen and (min-width: 300px) and (max-width: 600px) {
     .navbar {
-        display: none;
+        .nav{
+            display: none;
+        }
 
+        .resNavbar {
+            width: 100%;
+            display: block;
+            font-family: sans-serif;
+
+            .row {
+               width: 90%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 30px;
+
+                .bars {
+                    .fa-bars {
+                        cursor: pointer;
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            .resMenu {
+                width: 100%;
+                opacity: 0;
+                height: 0;
+                background-color: white;
+                position: absolute;
+                left: 0;
+                overflow: hidden;
+                transition: all 700ms linear;
+                z-index: 5;
+
+                ul {
+                    line-height: 30px;
+                    padding: 30px;
+
+                    li {
+                        a {
+                            color: #000;
+                        }
+
+                        font-size: 17px;
+                    }
+                }
+            }
+
+            .open {
+                height: auto;
+                opacity: 1;
+            }
+        }
     }
 }
 
 
-@media only screen and (min-width: 600px) and (max-width:1200px) {
-    .navbar {
-        display: none;
 
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .navbar {
+        .nav{
+            display: none;
+        }
+
+        .resNavbar {
+            width: 100%;
+            display: block;
+            font-family: sans-serif;
+
+            .row {
+               width: 90%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 30px;
+
+                .bars {
+                    .fa-bars {
+                        cursor: pointer;
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            .resMenu {
+                width: 100%;
+                opacity: 0;
+                height: 0;
+                background-color: white;
+                position: absolute;
+                left: 0;
+                overflow: hidden;
+                transition: all 700ms linear;
+                z-index: 5;
+
+                ul {
+                    line-height: 30px;
+                    padding: 30px;
+
+                    li {
+                        a {
+                            color: #000;
+                        }
+
+                        font-size: 17px;
+                    }
+                }
+            }
+
+            .open {
+                height: auto;
+                opacity: 1;
+            }
+        }
     }
 }

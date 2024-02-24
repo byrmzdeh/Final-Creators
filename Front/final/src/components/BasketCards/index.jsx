@@ -42,7 +42,9 @@ const BasketCards = () => {
                 ))}
 
             </table>
+            <button><a href="/checkout">Checkout</a></button>
 
+            
         </div>
     )
 }

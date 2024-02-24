@@ -1,9 +1,15 @@
 import React from 'react'
 import './style.scss'
+import { Helmet } from 'react-helmet'
 
 const Contact = () => {
     return (
         <div className='contact'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Contact</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <div className="get">
                 <img width={75} className='star-img' src="https://shtheme.com/demosd/upcreatorswp/wp-content/uploads/2023/05/rotate-shape.svg" alt="err" />
                 <h1>GET IN TOUCH</h1>

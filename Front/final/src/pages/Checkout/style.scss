@@ -1,50 +1,104 @@
 .checkout {
     max-width: 100%;
-    min-height: 130vh;
-    background-color: bisque;
+    min-height: 100vh;
+    background-image:
+        linear-gradient(306deg, rgba(20, 19, 19, 0.99), rgba(56, 56, 56, 0.6)),
+        url('https://shtheme.com/demosd/upcreatorswp/wp-content/uploads/2023/05/10.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     color: rgb(208, 208, 208);
-    margin: 200px auto;
+    margin-top: 150px;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-around;
 
-    .row {
+    .details {
+        margin: 100px auto;
+
+        h3 {
+            font-size: 30px;
+            color: white;
+            font-family: sans-serif;
+        }
+
         form {
+            margin: 30px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
             input {
-                background-color: #0f0e0f;
-                border: 1px solid gray;
-                color: white;
+                width: 300px;
+                height: 40px;
+                margin-left: 20px;
+
             }
 
             label {
                 color: white;
-                border: 1px solid gray;
+                font-size: 22px;
+                font-family: sans-serif;
             }
-
 
             select {
-                background-color: #0f0e0f;
-                color: rgb(208, 208, 208);
-            }
-
-            .order {
-
-                background-color: #0f0e0f;
-
-                .total {
-                    a {
-                        color: #b88939;
-                    }
-                }
-
-                .place {
-                    background-color: #c19f5f;
-                    color: white;
-                    border: none;
-
-                    &:hover {
-                        background-color: #b88939;
-                    }
-
-                }
+                width: 300px;
+                height: 40px;
+                margin-left: 20px;
             }
         }
+
+    }
+    .order{
+        margin: 100px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        button {
+            width: 200px;
+            height: 40px;
+
+        }
+        table{
+            thead{
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+    }
+
+
+}
+
+
+@media only screen and (min-width: 300px) and (max-width:600px) {
+    .checkout {
+        display: grid;
+        grid-template-columns: auto;
+        width: 100%;
+        height: auto;
+        .order{
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
+
+    }
+}
+
+
+@media only screen and (min-width: 600px) and (max-width:1200px) {
+    .checkout {
+        display: grid;
+        grid-template-columns: auto;
+        width: 100%;
+        height: auto;
+        .order{
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
+
     }
 }
